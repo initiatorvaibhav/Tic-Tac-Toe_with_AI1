@@ -13,5 +13,9 @@ public class Main {
         System.out.println("|" + str.substring(6, 9).replaceAll("", " ") + "|");
         System.out.println("---------");
         char[] ch = new char[str.length()];
+        for (int i = 0; i < str.length(); i++) {
+            ch[i] = str.charAt(i);
+
+        }
     }
 }
