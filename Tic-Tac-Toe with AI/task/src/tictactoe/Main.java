@@ -36,6 +36,9 @@ public class Main {
         }
         int i = 1;
         do {
+            System.out.println("Enter the coordinates: ");
+            int firstNo = scanner.nextInt();
+            int secondNo = scanner.nextInt();
 
         } while (i == 2);
 
