@@ -7,17 +7,12 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         char[][] array = new char[5][9];
         String str = scanner.next();
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 9; j++) {
-                if (i == 0 || i == 4)
-                    array[i][j] = '-';
-                else if ((i != 0 && i != 4 && j == 0) || (i != 0 && i != 4 && j == 8))
-                    array[i][j] = '|';
-                else if (i > 0 && j % 2 != 0)
-                    array[i][j] = ' ';
-                else
-                    array[i][j] = ' ';
-            }
-        }
+        System.out.println("---------");
+        System.out.println("|" + str.substring(0, 3).replaceAll("", " ") + "|");
+        System.out.println("|" + str.substring(3, 6).replaceAll("", " ") + "|");
+        System.out.println("|" + str.substring(6, 9).replaceAll("", " ") + "|");
+        System.out.println("---------");
+
+
     }
 }
