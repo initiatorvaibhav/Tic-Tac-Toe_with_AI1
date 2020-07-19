@@ -12,7 +12,6 @@ public class Main {
         System.out.println("|" + str.substring(3, 6).replaceAll("", " ") + "|");
         System.out.println("|" + str.substring(6, 9).replaceAll("", " ") + "|");
         System.out.println("---------");
-
-
+        char[] ch = new char[str.length()];
     }
 }
