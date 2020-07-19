@@ -39,6 +39,10 @@ public class Main {
             System.out.println("Enter the coordinates: ");
             int firstNo = scanner.nextInt();
             int secondNo = scanner.nextInt();
+            if (firstNo > 3 || secondNo > 3) {
+                System.out.println("Coordinates should be from 1 to 3!");
+                i = 2;
+            }
 
         } while (i == 2);
 
