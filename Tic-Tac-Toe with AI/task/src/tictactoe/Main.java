@@ -7,6 +7,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String str = scanner.next();
         char[][] array = new char[5][str.length()];
+        int count = 0;
         System.out.println("---------");
         System.out.println("|" + str.substring(0, 3).replaceAll("", " ") + "|");
         System.out.println("|" + str.substring(3, 6).replaceAll("", " ") + "|");
@@ -18,6 +19,20 @@ public class Main {
                 ch[i] = ' ';
             }
         }
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < str.length(); j++) {
+                if (i == 0 || i == 4) {
+                    array[i][j] = '-';
+                } else if ((i != 0 && i != 4 && j == 0) || (i != 0 && i != 4 && j == 8)) {
+                    array[i][j] = '|';
+                } else if (i > 0 && j % 2 != 0) {
+                    array[i][j] = ' ';
+                } else {
+                    array[i][j] = ch[count];
+                    count++;
 
+                }
+            }
+        }
     }
 }
