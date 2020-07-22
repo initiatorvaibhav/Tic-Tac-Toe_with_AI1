@@ -34,6 +34,7 @@ public class Main {
                 }
             }
         }
+
         int i = 1;
         do {
             System.out.println("Enter the coordinates: ");
@@ -42,10 +43,38 @@ public class Main {
             if (firstNo > 3 || secondNo > 3) {
                 System.out.println("Coordinates should be from 1 to 3!");
                 i = 2;
+            } else if (firstNo == 1 && secondNo == 3) {
+                if (array[1][2] == ' ') {
+                    array[1][2] = 'X';
+                    i = 0;
+                } else {
+                    System.out.println("This cell is occupied! Choose another one!");
+                    i = 2;
+                }
             }
 
         } while (i == 2);
 
 
     }
+
+    public static boolean Count(int array[][]) {
+        int X = 0;
+        int O = 0;
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (array[i][j] == 'X')
+                    X++;
+                else if (array[i][j] == 'O')
+                    O++;
+            }
+        }
+        if (X > O)
+            return true;
+        else
+            return false;
+
+    }
+
 }
+
