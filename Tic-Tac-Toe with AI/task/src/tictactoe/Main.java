@@ -59,6 +59,14 @@ public class Main {
                     System.out.println("This cell is occupied! Choose another one!");
                     i = 2;
                 }
+            } else if (firstNo == 3 && secondNo == 3) {
+                if (array[1][6] == ' ') {
+                    array[1][6] = 'X';
+                    i = 0;
+                } else {
+                    System.out.println("This cell is occupied! Choose another one!");
+                    i = 2;
+                }
             }
 
         } while (i == 2);
