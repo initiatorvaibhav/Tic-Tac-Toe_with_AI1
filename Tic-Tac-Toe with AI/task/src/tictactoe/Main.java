@@ -133,7 +133,7 @@ public class Main {
         int valueOfO = 0;
         int emptyValue = 0;
         int countOfX = 0;
-
+        int countOfO = 0;
         return true;
     }
 
