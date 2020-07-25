@@ -140,8 +140,19 @@ public class Main {
                 if (array[i][j] == 'O') countOfO++;
             }
         }
+        for (int i = 1; i < 4; i++) {
+            int j = 0;
+            if (array[i][j + 2] == 'X' && array[i][j + 4] == 'X' && array[i][j + 6] == 'X') {
+                valueOfX++;
+                break;
+            }
+            if (array[i][j + 2] == 'O' && array[i][j + 4] == 'O' && array[i][j + 6] == 'O') {
+                valueOfO++;
+                break;
+            }
+        }
+
         return true;
     }
-
 }
 
