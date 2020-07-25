@@ -111,6 +111,9 @@ public class Main {
                 System.out.println("You should enter numbers!");
                 i = 2;
             }
+            if (check(array)) {
+                break;
+            }
         } while (i == 2);
     }
 
@@ -183,7 +186,6 @@ public class Main {
             System.out.println("O wins");
             emptyValue++;
         }
-
         return emptyValue > 0;
     }
 }
