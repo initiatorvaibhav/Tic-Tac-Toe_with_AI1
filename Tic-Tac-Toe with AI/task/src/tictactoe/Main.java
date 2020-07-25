@@ -177,6 +177,8 @@ public class Main {
             System.out.println("Draw");
         } else if (valueOfX != 0) {
             System.out.println("X wins");
+        } else if (valueOfO != 0) {
+            System.out.println("O wins");
         }
         return true;
     }
