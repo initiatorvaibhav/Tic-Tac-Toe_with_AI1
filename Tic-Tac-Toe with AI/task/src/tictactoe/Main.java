@@ -134,6 +134,12 @@ public class Main {
         int emptyValue = 0;
         int countOfX = 0;
         int countOfO = 0;
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (array[i][j] == 'X') countOfX++;
+                if (array[i][j] == 'O') countOfO++;
+            }
+        }
         return true;
     }
 
