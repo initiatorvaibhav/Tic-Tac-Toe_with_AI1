@@ -111,11 +111,10 @@ public class Main {
                 System.out.println("You should enter numbers!");
                 i = 2;
             }
-
         } while (i == 2);
     }
 
-    public static boolean Count(char array[][]) {
+    public static boolean Count(char[][] array) {
         int X = 0;
         int O = 0;
         for (int i = 0; i < 5; i++) {
@@ -127,6 +126,11 @@ public class Main {
             }
         }
         return X > O;
+    }
+
+    public static boolean check(char[][] array) {
+        int valueOfX = 0;
+        return true;
     }
 
 }
