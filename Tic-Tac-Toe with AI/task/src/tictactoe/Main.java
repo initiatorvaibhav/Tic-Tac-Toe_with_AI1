@@ -107,6 +107,9 @@ public class Main {
                     System.out.println("This cell is occupied! Choose another one!");
                     i = 2;
                 }
+            } else {
+                System.out.println("You should enter numbers!");
+                i = 2;
             }
 
         } while (i == 2);
