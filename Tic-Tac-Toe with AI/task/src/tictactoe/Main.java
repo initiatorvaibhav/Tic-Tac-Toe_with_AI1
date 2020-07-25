@@ -151,6 +151,18 @@ public class Main {
                 break;
             }
         }
+        for (int i = 2; i < 7; i += 2) {
+            int j = 1;
+            if (array[j][i] == 'X' && array[j + 1][i] == 'X' && array[j + 2][i] == 'X') {
+                valueOfX++;
+                break;
+            }
+            if (array[j][i] == 'O' && array[j + 1][i] == 'O' && array[j + 2][i] == 'O') {
+                valueOfO++;
+                break;
+            }
+        }
+
 
         return true;
     }
