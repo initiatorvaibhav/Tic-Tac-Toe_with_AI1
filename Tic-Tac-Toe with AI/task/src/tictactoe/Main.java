@@ -162,7 +162,18 @@ public class Main {
                 break;
             }
         }
-
+        if (array[1][2] == 'X' && array[2][4] == 'X' && array[3][6] == 'X') {
+            valueOfX++;
+        }
+        if (array[1][2] == 'O' && array[2][4] == 'O' && array[3][6] == 'O') {
+            valueOfX++;
+        }
+        if (array[1][6] == 'O' && array[2][4] == 'O' && array[3][2] == 'O') {
+            valueOfO++;
+        }
+        if (array[1][6] == 'X' && array[2][4] == 'X' && array[3][2] == 'X') {
+            valueOfO++;
+        }
 
         return true;
     }
