@@ -130,6 +130,8 @@ public class Main {
 
     public static boolean check(char[][] array) {
         int valueOfX = 0;
+        int valueOfO = 0;
+
         return true;
     }
 
