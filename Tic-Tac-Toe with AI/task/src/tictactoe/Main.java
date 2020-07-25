@@ -173,8 +173,9 @@ public class Main {
         }
         if (array[1][6] == 'X' && array[2][4] == 'X' && array[3][2] == 'X') {
             valueOfO++;
+        } else if (valueOfO == 0 && valueOfX == 0) {
+            System.out.println("Draw");
         }
-
         return true;
     }
 }
