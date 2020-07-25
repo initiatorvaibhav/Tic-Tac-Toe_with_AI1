@@ -175,16 +175,20 @@ public class Main {
             valueOfO++;
         }
         if (array[1][6] == 'X' && array[2][4] == 'X' && array[3][2] == 'X') {
-            valueOfO++;
+            valueOfX++;
         } else if (valueOfO == 0 && valueOfX == 0) {
             System.out.println("Draw");
             emptyValue++;
+
         } else if (valueOfX != 0) {
             System.out.println("X wins");
             emptyValue++;
+
         } else if (valueOfO != 0) {
             System.out.println("O wins");
             emptyValue++;
+        } else if ((countOfO + countOfX) > 4) {
+            System.out.println("Game not finished");
         }
         return emptyValue > 0;
     }
