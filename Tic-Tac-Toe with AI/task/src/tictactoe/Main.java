@@ -175,12 +175,16 @@ public class Main {
             valueOfO++;
         } else if (valueOfO == 0 && valueOfX == 0) {
             System.out.println("Draw");
+            emptyValue++;
         } else if (valueOfX != 0) {
             System.out.println("X wins");
+            emptyValue++;
         } else if (valueOfO != 0) {
             System.out.println("O wins");
+            emptyValue++;
         }
-        return true;
+
+        return emptyValue > 0;
     }
 }
 
