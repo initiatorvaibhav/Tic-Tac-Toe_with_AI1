@@ -43,9 +43,9 @@ public class Main {
             if (firstNo > 3 || secondNo > 3) {
                 System.out.println("Coordinates should be from 1 to 3!");
                 i = 2;
-            } else if (firstNo == 1 && secondNo == 3 && Count(array)) {
+            } else if (firstNo == 1 && secondNo == 3) {
                 if (array[1][2] == ' ') {
-                    array[1][2] = 'X';
+                    array[1][2] = Count(array) ? 'O' : 'X';
                     i = 0;
                 } else {
                     System.out.println("This cell is occupied! Choose another one!");
@@ -53,7 +53,7 @@ public class Main {
                 }
             } else if (firstNo == 2 && secondNo == 3) {
                 if (array[1][4] == ' ') {
-                    array[1][4] = 'X';
+                    array[1][4] = Count(array) ? 'O' : 'X';
                     i = 0;
                 } else {
                     System.out.println("This cell is occupied! Choose another one!");
@@ -61,7 +61,7 @@ public class Main {
                 }
             } else if (firstNo == 3 && secondNo == 3) {
                 if (array[1][6] == ' ') {
-                    array[1][6] = 'X';
+                    array[1][6] = Count(array) ? 'O' : 'X';
                     i = 0;
                 } else {
                     System.out.println("This cell is occupied! Choose another one!");
@@ -69,7 +69,7 @@ public class Main {
                 }
             } else if (firstNo == 1 && secondNo == 2) {
                 if (array[2][2] == ' ') {
-                    array[2][2] = 'X';
+                    array[2][2] = Count(array) ? 'O' : 'X';
                     i = 0;
                 } else {
                     System.out.println("This cell is occupied! Choose another one!");
@@ -77,7 +77,7 @@ public class Main {
                 }
             } else if (firstNo == 3 && secondNo == 2) {
                 if (array[2][6] == ' ') {
-                    array[2][6] = 'X';
+                    array[2][6] = Count(array) ? 'O' : 'X';
                     i = 0;
                 } else {
                     System.out.println("This cell is occupied! Choose another one!");
@@ -85,7 +85,7 @@ public class Main {
                 }
             } else if (firstNo == 1 && secondNo == 1) {
                 if (array[3][2] == ' ') {
-                    array[3][2] = 'X';
+                    array[3][2] = Count(array) ? 'O' : 'X';
                     i = 0;
                 } else {
                     System.out.println("This cell is occupied! Choose another one!");
@@ -93,7 +93,7 @@ public class Main {
                 }
             } else if (firstNo == 2 && secondNo == 1) {
                 if (array[3][2] == ' ') {
-                    array[3][2] = 'X';
+                    array[3][2] = Count(array) ? 'O' : 'X';
                     i = 0;
                 } else {
                     System.out.println("This cell is occupied! Choose another one!");
@@ -101,7 +101,7 @@ public class Main {
                 }
             } else if (firstNo == 3 && secondNo == 1) {
                 if (array[3][2] == ' ') {
-                    array[3][2] = 'X';
+                    array[3][2] = Count(array) ? 'O' : 'X';
                     i = 0;
                 } else {
                     System.out.println("This cell is occupied! Choose another one!");
@@ -113,8 +113,6 @@ public class Main {
             }
 
         } while (i == 2);
-
-
     }
 
     public static boolean Count(char array[][]) {
@@ -128,11 +126,7 @@ public class Main {
                     O++;
             }
         }
-        if (X > O)
-            return true;
-        else
-            return false;
-
+        return X > O;
     }
 
 }
