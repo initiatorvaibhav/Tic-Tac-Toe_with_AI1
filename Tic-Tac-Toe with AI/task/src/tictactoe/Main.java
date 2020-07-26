@@ -180,21 +180,30 @@ public class Main {
         if (array[1][6] == 'X' && array[2][4] == 'X' && array[3][2] == 'X') {
             valueOfX++;
         } else if (valueOfO == 0 && valueOfX == 0 && ((countOfO + countOfX) == 9)) {
-            System.out.println("Draw");
+
             status = 1;
 
         } else if (valueOfX != 0) {
-            System.out.println("X wins");
             status = 2;
 
         } else if (valueOfO != 0) {
-            System.out.println("O wins");
             status = 3;
         } else if (valueOfX != 0 && valueOfX != 0 && emptyValue > 0) {
             status = 4;
-            System.out.println("Game not finished");
         }
         return status;
+    }
+
+    public static void display(int num) {
+        if (num == 1) {
+            System.out.println("Draw");
+        } else if (num == 2) {
+            System.out.println("X wins");
+        } else if (num == 3) {
+            System.out.println("O wins");
+        } else if (num == 4) {
+            System.out.println("Game not finished");
+        }
     }
 }
 
