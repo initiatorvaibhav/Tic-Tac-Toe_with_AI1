@@ -3,7 +3,7 @@ package tictactoe;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter cells: ");
         String str = scanner.next();
@@ -35,89 +35,92 @@ public class Main {
                 }
             }
         }
+        try {
+            int i = 1;
+            do {
+                System.out.println("Enter the coordinates: ");
+                int firstNo = scanner.nextInt();
+                int secondNo = scanner.nextInt();
+                if (firstNo > 3 || secondNo > 3) {
+                    System.out.println("Coordinates should be from 1 to 3!");
+                    i = 2;
+                } else if (firstNo == 1 && secondNo == 3) {
+                    if (array[1][2] == ' ') {
+                        array[1][2] = Count(array) ? 'O' : 'X';
+                        i = 0;
+                    } else {
+                        System.out.println("This cell is occupied! Choose another one!");
+                        i = 2;
+                    }
+                } else if (firstNo == 2 && secondNo == 3) {
+                    if (array[1][4] == ' ') {
+                        array[1][4] = Count(array) ? 'O' : 'X';
+                        i = 0;
+                    } else {
+                        System.out.println("This cell is occupied! Choose another one!");
+                        i = 2;
+                    }
+                } else if (firstNo == 3 && secondNo == 3) {
+                    if (array[1][6] == ' ') {
+                        array[1][6] = Count(array) ? 'O' : 'X';
+                        i = 0;
+                    } else {
+                        System.out.println("This cell is occupied! Choose another one!");
+                        i = 2;
+                    }
+                } else if (firstNo == 1 && secondNo == 2) {
+                    if (array[2][2] == ' ') {
+                        array[2][2] = Count(array) ? 'O' : 'X';
+                        i = 0;
+                    } else {
+                        System.out.println("This cell is occupied! Choose another one!");
+                        i = 2;
+                    }
+                } else if (firstNo == 3 && secondNo == 2) {
+                    if (array[2][6] == ' ') {
+                        array[2][6] = Count(array) ? 'O' : 'X';
+                        i = 0;
+                    } else {
+                        System.out.println("This cell is occupied! Choose another one!");
+                        i = 2;
+                    }
+                } else if (firstNo == 1 && secondNo == 1) {
+                    if (array[3][2] == ' ') {
+                        array[3][2] = Count(array) ? 'O' : 'X';
+                        i = 0;
+                    } else {
+                        System.out.println("This cell is occupied! Choose another one!");
+                        i = 2;
+                    }
+                } else if (firstNo == 2 && secondNo == 1) {
+                    if (array[3][2] == ' ') {
+                        array[3][2] = Count(array) ? 'O' : 'X';
+                        i = 0;
+                    } else {
+                        System.out.println("This cell is occupied! Choose another one!");
+                        i = 2;
+                    }
+                } else if (firstNo == 3 && secondNo == 1) {
+                    if (array[3][2] == ' ') {
+                        array[3][2] = Count(array) ? 'O' : 'X';
+                        i = 0;
+                    } else {
+                        System.out.println("This cell is occupied! Choose another one!");
+                        i = 2;
+                    }
+                } else {
+                    System.out.println("You should enter numbers!");
+                    i = 2;
+                }
+                int dis = check(array);
+                if (dis > 0) {
+                    display(dis);
+                    break;
+                }
+            } while (i == 2);
+        } catch (Exception e) {
 
-        int i = 1;
-        do {
-            System.out.println("Enter the coordinates: ");
-            int firstNo = scanner.nextInt();
-            int secondNo = scanner.nextInt();
-            if (firstNo > 3 || secondNo > 3) {
-                System.out.println("Coordinates should be from 1 to 3!");
-                i = 2;
-            } else if (firstNo == 1 && secondNo == 3) {
-                if (array[1][2] == ' ') {
-                    array[1][2] = Count(array) ? 'O' : 'X';
-                    i = 0;
-                } else {
-                    System.out.println("This cell is occupied! Choose another one!");
-                    i = 2;
-                }
-            } else if (firstNo == 2 && secondNo == 3) {
-                if (array[1][4] == ' ') {
-                    array[1][4] = Count(array) ? 'O' : 'X';
-                    i = 0;
-                } else {
-                    System.out.println("This cell is occupied! Choose another one!");
-                    i = 2;
-                }
-            } else if (firstNo == 3 && secondNo == 3) {
-                if (array[1][6] == ' ') {
-                    array[1][6] = Count(array) ? 'O' : 'X';
-                    i = 0;
-                } else {
-                    System.out.println("This cell is occupied! Choose another one!");
-                    i = 2;
-                }
-            } else if (firstNo == 1 && secondNo == 2) {
-                if (array[2][2] == ' ') {
-                    array[2][2] = Count(array) ? 'O' : 'X';
-                    i = 0;
-                } else {
-                    System.out.println("This cell is occupied! Choose another one!");
-                    i = 2;
-                }
-            } else if (firstNo == 3 && secondNo == 2) {
-                if (array[2][6] == ' ') {
-                    array[2][6] = Count(array) ? 'O' : 'X';
-                    i = 0;
-                } else {
-                    System.out.println("This cell is occupied! Choose another one!");
-                    i = 2;
-                }
-            } else if (firstNo == 1 && secondNo == 1) {
-                if (array[3][2] == ' ') {
-                    array[3][2] = Count(array) ? 'O' : 'X';
-                    i = 0;
-                } else {
-                    System.out.println("This cell is occupied! Choose another one!");
-                    i = 2;
-                }
-            } else if (firstNo == 2 && secondNo == 1) {
-                if (array[3][2] == ' ') {
-                    array[3][2] = Count(array) ? 'O' : 'X';
-                    i = 0;
-                } else {
-                    System.out.println("This cell is occupied! Choose another one!");
-                    i = 2;
-                }
-            } else if (firstNo == 3 && secondNo == 1) {
-                if (array[3][2] == ' ') {
-                    array[3][2] = Count(array) ? 'O' : 'X';
-                    i = 0;
-                } else {
-                    System.out.println("This cell is occupied! Choose another one!");
-                    i = 2;
-                }
-            } else {
-                System.out.println("You should enter numbers!");
-                i = 2;
-            }
-            int dis = check(array);
-            if (dis > 0) {
-                display(dis);
-                break;
-            }
-        } while (i == 2);
+        }
     }
 
     public static boolean Count(char[][] array) {
