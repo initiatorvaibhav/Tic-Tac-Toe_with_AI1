@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter cells: ");
         String str = scanner.next();
         char[][] array = new char[5][str.length()];
         int count = 0;
@@ -111,8 +112,8 @@ public class Main {
                 System.out.println("You should enter numbers!");
                 i = 2;
             }
-            if (check(array)) {
-                break;
+            if (check(array) == 0) {
+
             }
         } while (i == 2);
     }
@@ -131,16 +132,18 @@ public class Main {
         return X > O;
     }
 
-    public static boolean check(char[][] array) {
+    public static int check(char[][] array) {
         int valueOfX = 0;
         int valueOfO = 0;
         int emptyValue = 0;
         int countOfX = 0;
         int countOfO = 0;
+        int status = 0;
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 9; j++) {
                 if (array[i][j] == 'X') countOfX++;
                 if (array[i][j] == 'O') countOfO++;
+                if (array[i][j] == ' ') emptyValue++;
             }
         }
         for (int i = 1; i < 4; i++) {
@@ -176,21 +179,22 @@ public class Main {
         }
         if (array[1][6] == 'X' && array[2][4] == 'X' && array[3][2] == 'X') {
             valueOfX++;
-        } else if (valueOfO == 0 && valueOfX == 0) {
+        } else if (valueOfO == 0 && valueOfX == 0 && ((countOfO + countOfX) == 9)) {
             System.out.println("Draw");
-            emptyValue++;
+            status = 1;
 
         } else if (valueOfX != 0) {
             System.out.println("X wins");
-            emptyValue++;
+            status = 2;
 
         } else if (valueOfO != 0) {
             System.out.println("O wins");
-            emptyValue++;
-        } else if ((countOfO + countOfX) > 4) {
+            status = 3;
+        } else if (valueOfX != 0 && valueOfX != 0 && emptyValue > 0) {
+            status = 4;
             System.out.println("Game not finished");
         }
-        return emptyValue > 0;
+        return status;
     }
 }
 
