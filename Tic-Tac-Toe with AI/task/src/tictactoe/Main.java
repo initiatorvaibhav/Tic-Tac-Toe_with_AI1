@@ -112,8 +112,10 @@ public class Main {
                 System.out.println("You should enter numbers!");
                 i = 2;
             }
-            if (check(array) == 0) {
-
+            int dis = check(array);
+            if (dis > 0) {
+                display(dis);
+                break;
             }
         } while (i == 2);
     }
@@ -188,7 +190,7 @@ public class Main {
 
         } else if (valueOfO != 0) {
             status = 3;
-        } else if (valueOfX != 0 && valueOfX != 0 && emptyValue > 0) {
+        } else if (valueOfX != 0 && valueOfX != 0 && emptyValue > 0 && (countOfO + countOfX) > 4) {
             status = 4;
         }
         return status;
